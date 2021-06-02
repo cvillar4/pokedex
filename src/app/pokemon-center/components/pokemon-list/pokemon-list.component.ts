@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../../services/pokemon.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'poke-pokemon-list',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  constructor() { }
+
+  pokemonList$ = this.pokemonService.pokemonList$.pipe(
+    tap(pokemonList => console.log(pokemonList))
+  );
+
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
   }
