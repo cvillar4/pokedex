@@ -2,4 +2,7 @@
     <div *ngFor="let pokemon of pokemonList">
         {{ pokemon.name }}
     </div>
+
+    <pagination [itemsPerPage]=itemsPerPage [totalItems]=totalItems (pageChanged)="pageChanged($event)">
+    </pagination>
 </ng-container>

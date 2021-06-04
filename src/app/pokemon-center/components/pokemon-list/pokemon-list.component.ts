@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { tap } from 'rxjs/operators';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'poke-pokemon-list',
@@ -9,14 +10,16 @@ import { tap } from 'rxjs/operators';
 })
 export class PokemonListComponent implements OnInit {
 
-
-  pokemonList$ = this.pokemonService.pokemonList$.pipe(
-    tap(pokemonList => console.log(pokemonList))
-  );
+  itemsPerPage = 30;
+  totalItems = 150;
+  pokemonList$ = this.pokemonService.pokemonList$;
 
   constructor(private pokemonService: PokemonService) { }
-
-  ngOnInit(): void {
+ 
+  ngOnInit(): void {}
+ 
+  pageChanged(event: PageChangedEvent): void {
+    this.pokemonService.emitPage(+event.page);
   }
 
 }
