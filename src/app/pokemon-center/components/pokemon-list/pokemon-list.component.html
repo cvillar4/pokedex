@@ -1,8 +1,12 @@
 <ng-container *ngIf="pokemonList$ | async as pokemonList">
-    <div *ngFor="let pokemon of pokemonList">
-        {{ pokemon.name }}
-    </div>
+    <section class="container pokemon-list-container">
+        <ul>
+            <li *ngFor="let pokemon of pokemonList">
+                {{ pokemon.name }}
+            </li>
+        </ul>
 
-    <pagination [itemsPerPage]=itemsPerPage [totalItems]=totalItems (pageChanged)="pageChanged($event)">
-    </pagination>
+        <pagination [itemsPerPage]=itemsPerPage [totalItems]=totalItems (pageChanged)="pageChanged($event)">
+        </pagination>
+    </section>
 </ng-container>
