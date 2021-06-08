@@ -5,5 +5,24 @@
         list-style: none;
         display: flex;
         flex-direction: column;
+
+        .pokemon-item {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    .pokemon-list-container {
+        .pokemon-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            .pokemon-item {
+                margin-right: 10px;
+            }
+        }
     }
 }

@@ -1,9 +1,17 @@
 <div class="card-container">
+    <p class="index">#{{ pokemon.id | number:'3.0-3'}}</p>
     <div class="image-container">
-        <img [src]='pokemon.sprites.other.dream_world.front_default' alt="">
+        <img [src]='pokemon.sprites.front_default' alt="">
     </div>
-    <div class="info-container">
-        <p class="index">{{ pokemon.id }}</p>
-        <p class="name">{{ pokemon.name }}</p>
+    <p class="name">{{ pokemon.name }}</p>
+
+    <div class="pokeball">
+        <div class="poke-up"></div>
+        <div class="poke-center">
+            <div class="poke-big-circle">
+                <div class="poke-small-circle"></div>
+            </div>
+        </div>
+        <div class="poke-down"></div>
     </div>
 </div>
