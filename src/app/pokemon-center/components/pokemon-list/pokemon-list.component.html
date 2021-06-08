@@ -1,8 +1,8 @@
 <ng-container *ngIf="pokemonList$ | async as pokemonList">
     <section class="container pokemon-list-container">
-        <ul>
-            <li *ngFor="let pokemon of pokemonList">
-                {{ pokemon.name }}
+        <ul class="pokemon-list">
+            <li class="pokemon-item" *ngFor="let pokemon of pokemonList">
+                <poke-pokemon-card [pokemon]=pokemon></poke-pokemon-card>
             </li>
         </ul>
 
