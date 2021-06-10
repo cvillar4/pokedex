@@ -6,7 +6,9 @@
             </li>
         </ul>
 
-        <pagination [itemsPerPage]=itemsPerPage [totalItems]=totalItems (pageChanged)="pageChanged($event)">
-        </pagination>
+        <div class="pagination-container">
+            <pagination [itemsPerPage]=itemsPerPage [totalItems]=totalItems (pageChanged)="pageChanged($event)">
+            </pagination>
+        </div>
     </section>
 </ng-container>
