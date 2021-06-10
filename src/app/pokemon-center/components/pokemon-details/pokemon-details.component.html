@@ -2,10 +2,36 @@
     <section class="pokemon-details-container container">
         <article class="info-container">
             <div class="image-container">
-                <img [src]='pokemon.sprites.front_default' [alt]='pokemon.name'>
+                <img [src]='pokemon.sprites.other.dream_world.front_default' [alt]='pokemon.name'>
             </div>
             <div class="description-container">
+                <div>
+                    <p>#{{ pokemon.id | number:'3.0-0' }}</p>
+                    <p>{{ pokemon.name }}</p>
+                </div>
+                <div>
+                    <div>
+                        <p>Height:</p>
+                        <p>{{pokemon.height}}</p>
+                    </div>
 
+                    <div>
+                        <p>Weight:</p>
+                        <p>{{pokemon.weight}}</p>
+                    </div>
+
+                    <div>
+                        <p>Abilities:</p>
+                        <ul>
+                            <li *ngFor="let ability of pokemon.abilities">
+                                {{ ability.ability.name }}
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
             </div>
         </article>
         <article class="evolution-container">
