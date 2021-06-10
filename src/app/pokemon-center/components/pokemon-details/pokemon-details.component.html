@@ -1,0 +1,15 @@
+<ng-container *ngIf="pokemon$ | async as pokemon">
+    <section class="pokemon-details-container container">
+        <article class="info-container">
+            <div class="image-container">
+                <img [src]='pokemon.sprites.front_default' [alt]='pokemon.name'>
+            </div>
+            <div class="description-container">
+
+            </div>
+        </article>
+        <article class="evolution-container">
+
+        </article>
+    </section>
+</ng-container>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { PokemonList } from '../models/pokemon-list';
 import { concatMap, map, switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject, forkJoin } from 'rxjs';
+import { BehaviorSubject, forkJoin, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,9 @@ export class PokemonService {
 
   private pokemonPageBehaviorSubject = new BehaviorSubject<number>(0);
   pokemonPageAction$ = this.pokemonPageBehaviorSubject.asObservable();
+
+  private pokemonIdSubject = new BehaviorSubject<number>(0);
+  pokemonIdAction$ = this.pokemonIdSubject.asObservable();
 
   pokemonList$ = this.pokemonPageAction$.pipe(
     concatMap(pageNumber => this.httpClient.get<PokemonList>(this.pokemonApiURL + this.pokemonListURL,
@@ -28,6 +31,10 @@ export class PokemonService {
     switchMap(pokemonList => forkJoin(this.generatePokemonURLs(pokemonList))),
   );
 
+  pokemonSelected$ = this.pokemonIdAction$.pipe(
+    concatMap(pokemonId => this.httpClient.get(`${this.pokemonApiURL}${this.pokemonListURL}/${pokemonId}`)), 
+  )
+
   constructor(private httpClient: HttpClient) { }
 
   generatePokemonURLs(pokemonList) {
@@ -41,6 +48,10 @@ export class PokemonService {
 
   emitPage(pageNumber: number): void {
     this.pokemonPageBehaviorSubject.next(pageNumber - 1);
+  }
+
+  emitPokemonId(pokemonId: number): void {
+    this.pokemonIdSubject.next(pokemonId);
   }
 
 }
