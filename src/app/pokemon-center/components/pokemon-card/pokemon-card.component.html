@@ -1,17 +1,19 @@
 <div class="card-container">
-    <p class="index">#{{ pokemon.id | number:'3.0-3'}}</p>
-    <div class="image-container">
-        <img [src]='pokemon.sprites.front_default' alt="">
-    </div>
-    <p class="name">{{ pokemon.name }}</p>
-
-    <div class="pokeball">
-        <div class="poke-up"></div>
-        <div class="poke-center">
-            <div class="poke-big-circle">
-                <div class="poke-small-circle"></div>
-            </div>
+    <a class="card-link" [routerLink]="['/pokemon', pokemon.id]">
+        <p class="index">#{{ pokemon.id | number:'3.0-3'}}</p>
+        <div class="image-container">
+            <img [src]='pokemon.sprites.front_default' alt="">
         </div>
-        <div class="poke-down"></div>
-    </div>
+        <p class="name">{{ pokemon.name }}</p>
+
+        <div class="pokeball">
+            <div class="poke-up"></div>
+            <div class="poke-center">
+                <div class="poke-big-circle">
+                    <div class="poke-small-circle"></div>
+                </div>
+            </div>
+            <div class="poke-down"></div>
+        </div>
+    </a>
 </div>

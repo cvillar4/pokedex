@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PokemonCenterModule } from './pokemon-center/pokemon-center.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PokemonCenterModule } from './pokemon-center/pokemon-center.module';
   ],
   imports: [
     BrowserModule,
-    PokemonCenterModule
+    PokemonCenterModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
