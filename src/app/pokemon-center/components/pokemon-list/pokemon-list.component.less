@@ -1,6 +1,6 @@
 .pokemon-list-container {
     .pokemon-list {
-        padding: 0;
+        padding: 50px 0 40px;
         margin: 0;
         list-style: none;
         display: flex;
@@ -8,6 +8,25 @@
 
         .pokemon-item {
             margin-bottom: 10px;
+        }
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+
+        pagination ::ng-deep .pagination {
+            margin-bottom: 50px;
+
+            .page-item .page-link {
+                color: #ee1515;
+            } 
+
+            .page-item.active .page-link {
+                color: white;
+                background-color: #ee1515;
+                border-color: #ee1515;
+            }   
         }
     }
 }
@@ -22,6 +41,22 @@
     
             .pokemon-item {
                 margin-right: 10px;
+            }
+        }
+
+        .pagination-container {
+    
+            pagination ::ng-deep .pagination {
+    
+                .page-item .page-link {
+                    color: #3B4CCA;
+                } 
+    
+                .page-item.active .page-link {
+                    color: white;
+                    background-color: #3B4CCA;
+                    border-color: #3B4CCA;
+                }   
             }
         }
     }
