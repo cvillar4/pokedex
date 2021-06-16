@@ -6,9 +6,10 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { RouterModule } from '@angular/router';
+import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
 
 @NgModule({
-  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent],
+  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent, PokemonTypeComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     PokemonListComponent,
     PokemonCardComponent, 
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    PokemonTypeComponent
   ]
 })
 export class PokemonCenterModule { }

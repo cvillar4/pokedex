@@ -29,13 +29,22 @@
                         </ul>
                     </div>
 
+                    <div>
+                        <p>Types:</p>
+                        <ul>
+                            <li *ngFor="let type of pokemon.types">
+                                <poke-pokemon-type [pokemonType]=type></poke-pokemon-type>
+                            </li>
+                        </ul>
+                    </div>
+
 
 
                 </div>
             </div>
         </article>
         <article class="evolution-container">
-
+            
         </article>
     </section>
 </ng-container>
