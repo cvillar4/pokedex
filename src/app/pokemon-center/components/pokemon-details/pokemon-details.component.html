@@ -2,37 +2,38 @@
     <section class="pokemon-details-container container">
         <article class="info-container">
             <div class="image-container">
-                <img [src]='pokemon.sprites.other.dream_world.front_default' [alt]='pokemon.name'>
+                <img [src]='pokemon["sprites"]["other"]["official-artwork"]["front_default"]' [alt]='pokemon.name'>
             </div>
             <div class="description-container">
-                <div>
-                    <p>#{{ pokemon.id | number:'3.0-0' }}</p>
-                    <p>{{ pokemon.name }}</p>
+                <div class="main-info-container">
+                    <p class="index">#{{ pokemon.id | number:'3.0-0' }}</p>
+                    <p class="name">{{ pokemon.name }}</p>
                 </div>
-                <div>
-                    <div>
-                        <p>Height:</p>
-                        <p>{{pokemon.height}}</p>
+                <div class="details-container">
+                    <div class="details-inner">
+                        <label>Height:</label>
+                        <p class="measure">{{pokemon.height | unitConverter:'decimetre'}} m</p>
                     </div>
 
-                    <div>
-                        <p>Weight:</p>
-                        <p>{{pokemon.weight}}</p>
+                    <div class="details-inner">
+                        <label>Weight:</label>
+                        <p class="measure">{{pokemon.weight | unitConverter:'hectogram'}} kg</p>
                     </div>
 
-                    <div>
-                        <p>Abilities:</p>
-                        <ul>
-                            <li *ngFor="let ability of pokemon.abilities">
-                                {{ ability.ability.name }}
+                    <div class="details-inner">
+                        <label>Abilities:</label>
+                        <ul class="abilities-list">
+                            <li class="ability-container" *ngFor="let ability of pokemon.abilities">
+                                <img src="../../../../assets/icons/pokeball.svg" alt="pokeball">
+                                <p>{{ ability.ability.name }}</p>
                             </li>
                         </ul>
                     </div>
 
-                    <div>
-                        <p>Types:</p>
-                        <ul>
-                            <li *ngFor="let type of pokemon.types">
+                    <div class="details-inner">
+                        <label>Types:</label>
+                        <ul class="types-list">
+                            <li class="type-container" *ngFor="let type of pokemon.types">
                                 <poke-pokemon-type [pokemonType]=type></poke-pokemon-type>
                             </li>
                         </ul>
