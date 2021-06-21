@@ -1,10 +1,122 @@
 .pokemon-details-container {
     background-color: white;
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     .info-container {
+
         .image-container {
             display: flex;
             justify-content: center;
+            margin-bottom: 10px;
+            background-color: #F2F2F2;
+            border-radius: 8px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .description-container {
+            p {
+                text-transform: capitalize;
+                font-size: 24px;
+                margin: 0;
+            }
+
+            .main-info-container {
+
+                .index {
+                    font-size: 32px;
+                    margin-bottom: 0;
+                }
+
+                .name {
+                    font-size: 40px;
+                    font-weight: bold;
+                }
+            }
+
+            .details-container {
+
+                .details-measure-container {
+                    margin-bottom: 10px;
+                }
+
+                .details-inner {
+                    margin-bottom: 10px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    label {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+
+                    .measure {
+                        text-transform: none;
+                    }
+
+                    .abilities-list {
+                        list-style: none;
+                        margin: 0;
+
+                        .ability-container {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .types-list {
+                        display: flex;
+                        list-style: none;
+                        margin: 0;
+
+                        .type-container {
+                            margin-right: 10px;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .pokemon-details-container {
+        padding: 50px;
+    
+        .info-container {
+            display: flex;
+
+            .image-container {
+                margin-right: 60px;
+            }
+
+            .description-container {
+                .details-container {
+                    .details-measure-container {
+                        display: flex;
+
+                        .details-inner:first-child {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

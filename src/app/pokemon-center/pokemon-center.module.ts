@@ -7,9 +7,10 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { RouterModule } from '@angular/router';
 import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
+import { UnitConverterPipe } from './pipes/unit-converter.pipe';
 
 @NgModule({
-  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent, PokemonTypeComponent],
+  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent, PokemonTypeComponent, UnitConverterPipe],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { map, tap } from 'rxjs/operators';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
@@ -6,7 +6,8 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 @Component({
   selector: 'poke-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.less']
+  styleUrls: ['./pokemon-list.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonListComponent implements OnInit {
 
