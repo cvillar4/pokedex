@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'poke-pokemon-type',
   templateUrl: './pokemon-type.component.html',
-  styleUrls: ['./pokemon-type.component.less']
+  styleUrls: ['./pokemon-type.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonTypeComponent implements OnInit {
 

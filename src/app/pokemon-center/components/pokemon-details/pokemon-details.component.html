@@ -10,14 +10,16 @@
                     <p class="name">{{ pokemon.name }}</p>
                 </div>
                 <div class="details-container">
-                    <div class="details-inner">
-                        <label>Height:</label>
-                        <p class="measure">{{pokemon.height | unitConverter:'decimetre'}} m</p>
-                    </div>
-
-                    <div class="details-inner">
-                        <label>Weight:</label>
-                        <p class="measure">{{pokemon.weight | unitConverter:'hectogram'}} kg</p>
+                    <div class="details-measure-container">
+                        <div class="details-inner">
+                            <label>Height:</label>
+                            <p class="measure">{{pokemon.height | unitConverter:'decimetre'}} m</p>
+                        </div>
+    
+                        <div class="details-inner">
+                            <label>Weight:</label>
+                            <p class="measure">{{pokemon.weight | unitConverter:'hectogram'}} kg</p>
+                        </div>                        
                     </div>
 
                     <div class="details-inner">

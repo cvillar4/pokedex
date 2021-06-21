@@ -14,10 +14,6 @@ export class PokemonDetailsComponent implements OnInit {
     tap(console.log)
   );
 
-  // pokemonChain$ = this.pokemonService.pokemonEvolutionChain$.pipe(
-  //   tap(console.log)
-  // );
-
   constructor(private pokemonService: PokemonService, 
               private route: ActivatedRoute) { }
 
