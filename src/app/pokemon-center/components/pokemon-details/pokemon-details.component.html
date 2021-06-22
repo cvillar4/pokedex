@@ -1,13 +1,17 @@
 <ng-container *ngIf="pokemon$ | async as pokemon">
+
     <section class="pokemon-details-container container">
+        <div class="arrow-container left-arrow" (click)="emitPreviousPokemon(pokemon.id)">
+            <img src="../../../../assets/icons/left-arrow.svg" alt="Left arrow">
+        </div>
         <article class="info-container">
             <div class="image-container">
                 <img [src]='pokemon["sprites"]["other"]["official-artwork"]["front_default"]' [alt]='pokemon.name'>
             </div>
             <div class="description-container">
                 <div class="main-info-container">
-                    <p class="index">#{{ pokemon.id | number:'3.0-0' }}</p>
                     <p class="name">{{ pokemon.name }}</p>
+                    <p class="index">#{{ pokemon.id | number:'3.0-0' }}</p>
                 </div>
                 <div class="details-container">
                     <div class="details-measure-container">
@@ -15,11 +19,11 @@
                             <label>Height:</label>
                             <p class="measure">{{pokemon.height | unitConverter:'decimetre'}} m</p>
                         </div>
-    
+
                         <div class="details-inner">
                             <label>Weight:</label>
                             <p class="measure">{{pokemon.weight | unitConverter:'hectogram'}} kg</p>
-                        </div>                        
+                        </div>
                     </div>
 
                     <div class="details-inner">
@@ -46,8 +50,9 @@
                 </div>
             </div>
         </article>
-        <article class="evolution-container">
-            
-        </article>
+        <div class="arrow-container right-arrow" (click)="emitNextPokemon(pokemon.id)">
+            <img src="../../../../assets/icons/right-arrow.svg" alt="Right arrow">
+        </div>
     </section>
+
 </ng-container>

@@ -4,6 +4,10 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
+    .arrow-container {
+        display: none;
+    }
+
     .info-container {
 
         .image-container {
@@ -26,6 +30,7 @@
             }
 
             .main-info-container {
+                margin-bottom: 50px;
 
                 .index {
                     font-size: 32px;
@@ -35,6 +40,7 @@
                 .name {
                     font-size: 40px;
                     font-weight: bold;
+                    line-height: 20px;
                 }
             }
 
@@ -98,6 +104,38 @@
 @media screen and (min-width: 768px) {
     .pokemon-details-container {
         padding: 50px;
+        position: relative;
+
+        .arrow-container {
+            display: block;
+            position: absolute;
+            background-color: white;
+            padding: 20px 10px;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+    
+            &:hover {
+                background-color: #3B4CCA;
+            }
+        }
+    
+        .left-arrow {
+            top: 50%;
+            left: 0;
+            transform: translateX(-100%);
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+    
+        .right-arrow {
+            top: 50%;
+            right: 0;
+            transform: translateX(100%);
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
     
         .info-container {
             display: flex;
