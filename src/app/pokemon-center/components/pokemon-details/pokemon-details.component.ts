@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { tap } from 'rxjs/operators';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
@@ -33,8 +32,9 @@ export class PokemonDetailsComponent implements OnInit {
   }
 
   emitNextPokemon(pokemonId: number) {
-    pokemonId += 1;
-    this.pokemonService.emitPokemonId(pokemonId);
+    if (pokemonId < 151) {
+      pokemonId += 1;
+      this.pokemonService.emitPokemonId(pokemonId);
+    }
   }
-
 }

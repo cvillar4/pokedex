@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
-import { map, tap } from 'rxjs/operators';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
