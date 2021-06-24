@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
-import { map, tap } from 'rxjs/operators';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
@@ -13,9 +12,7 @@ export class PokemonListComponent implements OnInit {
 
   itemsPerPage = 30;
   totalItems = 150;
-  pokemonList$ = this.pokemonService.pokemonList$.pipe(
-    tap(console.log)
-  );
+  pokemonList$ = this.pokemonService.pokemonList$;
 
   constructor(private pokemonService: PokemonService) { }
  

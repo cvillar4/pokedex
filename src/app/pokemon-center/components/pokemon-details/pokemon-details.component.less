@@ -4,6 +4,10 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
+    .arrow-container {
+        display: none;
+    }
+
     .info-container {
 
         .image-container {
@@ -11,6 +15,7 @@
             justify-content: center;
             margin-bottom: 10px;
             background-color: #F2F2F2;
+            border: 3px solid black;
             border-radius: 8px;
 
             img {
@@ -19,6 +24,11 @@
         }
 
         .description-container {
+            background-color: #F2F2F2;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 8px;
+
             p {
                 text-transform: capitalize;
                 font-size: 24px;
@@ -26,6 +36,7 @@
             }
 
             .main-info-container {
+                margin-bottom: 50px;
 
                 .index {
                     font-size: 32px;
@@ -35,6 +46,7 @@
                 .name {
                     font-size: 40px;
                     font-weight: bold;
+                    line-height: 20px;
                 }
             }
 
@@ -95,15 +107,23 @@
     }
 }
 
+@media screen and (min-width: 550px) {
+    .pokemon-details-container {
+        border: 3px solid #FF0000;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .pokemon-details-container {
-        padding: 50px;
+        position: relative;
+        border-color: #3B4CCA;
     
         .info-container {
             display: flex;
 
             .image-container {
-                margin-right: 60px;
+                margin-right: 20px;
+                margin-bottom: 0;
             }
 
             .description-container {
@@ -117,6 +137,46 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemon-details-container {
+        padding: 50px;
+
+        .arrow-container {
+            display: block;
+            position: absolute;
+            background-color: white;
+            padding: 20px 10px;
+            border: 3px solid #3B4CCA;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+    
+            &:hover {
+                background-color: #3B4CCA;
+            }
+        }
+    
+        .left-arrow {
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%);
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+            border-right: none;
+        }
+    
+        .right-arrow {
+            top: 50%;
+            right: 0;
+            transform: translate(100%, -50%);
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+            border-left: none;
         }
     }
 }

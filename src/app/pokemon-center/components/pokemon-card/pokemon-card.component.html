@@ -1,11 +1,14 @@
 <div class="card-container">
     <a class="card-link" [routerLink]="['/pokemon', pokemon.id]">
-        <p class="index">#{{ pokemon.id | number:'3.0-3'}}</p>
-        <div class="image-container">
-            <img [src]='pokemon["sprites"]["other"]["official-artwork"]["front_default"]' [alt]="pokemon.name">
-        </div>
-        <p class="name">{{ pokemon.name }}</p>
 
+        <div class="card-inner-container">
+            <p class="index">#{{ pokemon.id | number:'3.0-3'}}</p>
+            <div class="image-container">
+                <img [src]='pokemon["sprites"]["other"]["official-artwork"]["front_default"]' [alt]="pokemon.name">
+            </div>
+            <p class="name">{{ pokemon.name }}</p>
+        </div>
+        
         <div class="pokeball">
             <div class="poke-up"></div>
             <div class="poke-center">
