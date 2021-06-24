@@ -15,7 +15,7 @@ import { PokemonNotFoundComponent } from 'src/app/pokemon-center/components/poke
       { path: 'pokemon', component: PokemonListComponent },
       { path: 'pokemon/:pokemonId', component: PokemonDetailsComponent },
       { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
-      { path: '**', component: PokemonNotFoundComponent }
+      { path: '**', redirectTo: '/pokemon', pathMatch: 'full' }
     ])
   ]
 })
