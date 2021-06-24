@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PokemonCenterModule } from './pokemon-center/pokemon-center.module';
 import { RouterModule } from '@angular/router';
+import { PokemonRoutingModule } from './pokemon-routing/pokemon-routing/pokemon-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     PokemonCenterModule,
+    PokemonRoutingModule,
     RouterModule
   ],
   providers: [],
