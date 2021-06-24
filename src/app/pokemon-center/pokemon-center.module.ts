@@ -8,24 +8,22 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 import { RouterModule } from '@angular/router';
 import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
 import { UnitConverterPipe } from './pipes/unit-converter.pipe';
+import { PokemonNotFoundComponent } from './components/pokemon-not-found/pokemon-not-found.component';
 
 @NgModule({
-  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent, PokemonTypeComponent, UnitConverterPipe],
+  declarations: [PokemonListComponent, PokemonCardComponent, PokemonDetailsComponent, PokemonTypeComponent, UnitConverterPipe, PokemonNotFoundComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     PaginationModule.forRoot(),
-    RouterModule.forRoot([
-      { path: 'pokemon', component: PokemonListComponent },
-      { path: 'pokemon/:pokemonId', component: PokemonDetailsComponent },
-      {path: '', redirectTo: '/pokemon', pathMatch: 'full'},
-    ])
+    RouterModule
   ],
   exports: [
     PokemonListComponent,
-    PokemonCardComponent, 
+    PokemonCardComponent,
     PokemonDetailsComponent,
-    PokemonTypeComponent
+    PokemonTypeComponent,
+    PokemonNotFoundComponent
   ]
 })
 export class PokemonCenterModule { }
