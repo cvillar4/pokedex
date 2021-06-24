@@ -2,7 +2,7 @@
 
     <section class="pokemon-details-container container">
         <div class="arrow-container left-arrow" (click)="emitPreviousPokemon(pokemon.id)">
-            <img src="../../../../assets/icons/left-arrow.svg" alt="Left arrow">
+            <img src="assets/icons/left-arrow.svg" alt="Left arrow">
         </div>
         <article class="info-container">
             <div class="image-container">
@@ -30,7 +30,7 @@
                         <label>Abilities:</label>
                         <ul class="abilities-list">
                             <li class="ability-container" *ngFor="let ability of pokemon.abilities">
-                                <img src="../../../../assets/icons/pokeball.svg" alt="pokeball">
+                                <img src="assets/icons/pokeball.svg" alt="pokeball">
                                 <p>{{ ability.ability.name }}</p>
                             </li>
                         </ul>
@@ -51,7 +51,7 @@
             </div>
         </article>
         <div class="arrow-container right-arrow" (click)="emitNextPokemon(pokemon.id)">
-            <img src="../../../../assets/icons/right-arrow.svg" alt="Right arrow">
+            <img src="assets/icons/right-arrow.svg" alt="Right arrow">
         </div>
     </section>
 
